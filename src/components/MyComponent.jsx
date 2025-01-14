@@ -42,10 +42,11 @@ const App = () => {
                     </div>
                 ))}
             </div>
-            <button className='flex justify-center py-4 px-12 bg-green-700 text-white border-none rounded-lg text-3xl'>Preview is here: </button>
+            <hr className='my-12 h-5'/>
+            {/* <button className='flex justify-center py-4 px-12 bg-green-700 text-white border-none rounded-lg text-3xl'>Preview is here: </button> */}
             <div className='mx-12 mt-15'>
                 <label htmlFor="">{textField}</label>
-                <input type={textFieldType} />
+                <input type={textFieldType} className='border'/>
             </div>
         </div>
     );
