@@ -26,7 +26,7 @@ const CheckboxInput = () => {
     >
       <h4>Draggable checkbox</h4>
       <div>
-        <label>Name:</label>
+        <label>Label-Name:</label>
         <input type="text" name="name" />
       </div>
       <div>

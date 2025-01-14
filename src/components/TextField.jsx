@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { useDrag } from "react-dnd";
 
-const TextField = () => {
+const TextField = ({onStateChange, onStateChangeType}) => {
+  const [inputText, setInputText] = useState(null);
+  const [inputType, setInputType] = useState("");
   const [{ isDragging }, dragRef] = useDrag(() => ({
     type: "FORM",
     item: { type: "form" },
@@ -26,14 +28,17 @@ const TextField = () => {
     >
       <h4>Draggable text</h4>
       <div>
-        <label>Name:</label>
-        <input type="text" name="name" />
+        <label>Label-Name:</label>
+        <input type="text" name="name" onChange={(e)=>{setInputText(e.target.value)
+          onStateChange(e.target.value);
+        }} />
       </div>
       <div>
-        <label>Email: </label>
-        <input type="email" name="email" />
+        <label>Type: </label>
+        <input type="text" name="type" onChange={(e)=>{setInputType(e.target.value);
+          onStateChangeType(e.target.value);
+        }}/>
       </div>
-      <button type="submit">Submit</button>
     </form>
   );
 };

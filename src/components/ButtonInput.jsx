@@ -26,12 +26,12 @@ const ButtonInput = () => {
     >
       <h4>Draggable Radio Input</h4>
       <div>
-        <label>Name:</label>
+        <label>Button-Name:</label>
         <input type="text" name="name" />
       </div>
       <div>
-        <label>Email: </label>
-        <input type="email" name="email" />
+        <label>Type : </label>
+        <input type="text" name="type" />
       </div>
       <button type="submit">Submit</button>
     </form>

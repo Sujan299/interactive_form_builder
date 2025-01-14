@@ -8,17 +8,25 @@ import ButtonInput from "./ButtonInput";
 
 const App = () => {
     const [droppedForms, setDroppedForms] = useState([]);
+    const [textField, setTextField] = useState(null);
+    const [textFieldType, setTextFieldType] = useState(null);
     console.log(droppedForms);
     const [showPreview, setShowPreview] = useState(false);
 
     const handleDrop = (item) => {
         setDroppedForms((prev) => [...prev, item.type]);
     };
+    const handleStateChange = (state)=>{
+        setTextField(state);
+    }
+    const handleStateChangeType = (state)=>{
+        setTextFieldType(state)
+    }
     return (
         <div style={{ padding: "20px" }}>
             <h1 className='text-5xl text-center'>Interactive form builder</h1>
             <div className='flex justify-between'>
-                <TextField />
+                <TextField onStateChange={handleStateChange} onStateChangeType={handleStateChangeType}/>
                 <CheckboxInput />
                 <RadioInput />
                 <SelectInput />
@@ -34,7 +42,11 @@ const App = () => {
                     </div>
                 ))}
             </div>
-            <button className='flex justify-center py-4 px-12 bg-green-700 text-white border-none rounded-lg text-3xl'>Preview</button>
+            <button className='flex justify-center py-4 px-12 bg-green-700 text-white border-none rounded-lg text-3xl'>Preview is here: </button>
+            <div className='mx-12 mt-15'>
+                <label htmlFor="">{textField}</label>
+                <input type={textFieldType} />
+            </div>
         </div>
     );
 };
